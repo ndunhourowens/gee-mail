@@ -8,6 +8,7 @@ body{
 	background-color: white;
 	width: 700px;
 	border: thin solid black;
+	margin:10px auto;
 }
 
 /*-----Logo Container-----*/
@@ -15,7 +16,9 @@ body{
 	background-color: #0090ff;
 	border: thin solid black;
 	margin: 10px;
+	
 }
+
 #logo img{
 	height: 75px;
 	width: 75px;
@@ -23,15 +26,48 @@ body{
 	padding: 2px;
 	margin: 10px;
 }
-/*#user-container h2{
+ul {
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+a {
+    float: left;
+    width: 6em;
+    text-decoration: none;
+    color: white;
+    /*background-color: purple;*/
+    margin: 20px;
+    padding: 0.2em 0.6em;
+    border-right: 1px solid white;
+}
+
+a:hover {
+    background-color: fuchsia;
+}
+
+li {
+    display: inline;
+}
+
+#user_container{
+	border:thin solid red;
+	width: 300px;
+}
+#user-container h2{
 	text-align: right;
-}*/
-#user-container img{
+}
+
+#user_container img{
 	height: 75px;
 	width: 75px;
 	background-color: #ffffff;
 	padding: 2px;
 	margin: 10px;
+
 }
 
 /*-----Folder Container-----*/
@@ -56,7 +92,7 @@ body{
 	width: 100px;
 }
 
-/*-----Misc Container-----*/
+/*-----Floating Container-----*/
 #float_left{
 	float: left;
 	margin-left: 20px;
@@ -68,11 +104,11 @@ body{
 #clear{
 	clear: both;
 }
-ul{
+ul.b{
 	
 	list-style: none;
 }
-ul li{
+ul li.b{
 	border-top-right-radius: 2px;
 	border-top-left-radius: 2px;
 	display: inline;
