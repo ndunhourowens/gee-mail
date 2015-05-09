@@ -1,0 +1,100 @@
+body{
+	background-color: #0090ff;
+	color: #b1b4b5;
+	font-family: Arial;
+	font-size: 12pt;
+}
+.container {
+	background-color: white;
+	width: 700px;
+	border: thin solid black;
+}
+
+/*-----Logo Container-----*/
+.logo_container{
+	background-color: #0090ff;
+	border: thin solid black;
+	margin: 10px;
+}
+#logo img{
+	height: 75px;
+	width: 75px;
+	background-color: #ffffff;
+	padding: 2px;
+	margin: 10px;
+}
+/*#user-container h2{
+	text-align: right;
+}*/
+#user-container img{
+	height: 75px;
+	width: 75px;
+	background-color: #ffffff;
+	padding: 2px;
+	margin: 10px;
+}
+
+/*-----Folder Container-----*/
+.folder_container{
+	background-color: #0090ff;
+	font-size: .80 em;
+	color: #ffffff;
+	border: thin solid black;
+	margin: 10px;
+}
+
+
+/*-----Inbox Container-----*/
+.inbox_container{
+	background-color: #0090ff;
+	padding: 10px;
+	border: thin solid black;
+	margin: 10px;
+}
+.inbox_container img{
+	height: 100px;
+	width: 100px;
+}
+
+/*-----Misc Container-----*/
+#float_left{
+	float: left;
+	margin-left: 20px;
+}
+#float_right{
+	float: right;
+	margin-right: 20px;
+}
+#clear{
+	clear: both;
+}
+ul{
+	
+	list-style: none;
+}
+ul li{
+	border-top-right-radius: 2px;
+	border-top-left-radius: 2px;
+	display: inline;
+	background: #4d4ddc;
+	padding: 15px;
+	margin-right: 60px;
+}
+
+table {
+	width: 100%;
+}
+th, td{
+	padding: 5px;
+	text-align: left;
+}
+table tr:nth-child(even){
+	background-color: #ffffff;
+}
+table tr:nth-child(odd){
+	background-color: #d8d8f8;
+}
+table th {
+	background-color: #4d4ddc;
+	color: #fffff0;
+}
