@@ -2,7 +2,10 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>JS Bin</title>
+  <title>GeeMail</title>
+  <script type="text/javascript" src="js/GetElementJS.js"></script>
+  <script type="text/javascript" src="js/mail-generator.js"></script>
+  <link href="css/style.css" rel="stylesheet" media="screen">
   <script>
     
 /*This is the mail generator file that will generate initial mail messages and expose methods for creating new messages in your project. Do not make any modifications to this file for your solution. Happy coding!*/
@@ -56,9 +59,8 @@ function getRandomDate(){
   </script>
 </head>
 <body>
-  <div id="main">
-    <p>testing</p>
-  </div>
+
+  
   <div class="container" id="main">
 			<div class="logo_container">
 				<div id="logo" >
@@ -95,21 +97,15 @@ function getRandomDate(){
 						<th>SUBJECT</th>
 					</tr>
 					<tr>
-						<td>???</td>
-						<td>???</td>
-						<td>???</td>
+						<td id="date"></td>
+						<td id="sender"></td>
+						<td id="subject"></td>
 					</tr>
-					<tr>
-						<td>???</td>
-						<td>???</td>
-						<td>???</td>
-					</tr>
+					
 				</table>
 			</div>
 
-			<div class="testContainer">
-
-			</div>
+		
 		</div>
 
 </body>

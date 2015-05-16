@@ -1,14 +1,16 @@
 for (var i = 0; i < window.geemails.length; i++)
   {
     console.log(window.geemails[i].sender);
-    document.getElementById("main").innerHTML = geemails[i].sender;
+    document.getElementById("sender").innerHTML = geemails[i].sender;
+    
+    console.log(window.geemails[i].subject);
+    document.getElementById("subject").innerHTML = geemails[i].subject;
+    
+    console.log(window.geemails[i].date);
+    document.getElementById("date").innerHTML = geemails[i].date;
+    
   }
 
-for (var i = 0; i < window.geemails.length; i++)
-  {
-    console.log(window.geemails[i].sender);
-    document.getElementById("main").innerHTML = geemails[i].subject;
-  }
 
 var testing = document.createElement("h1");
 var text = document.createTextNode("I doing it");
