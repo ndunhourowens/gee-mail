@@ -2,25 +2,40 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>GeeMail</title>
-  <script src="js/GetElementJS.js"></script>
   <script src="js/mail-generator.js"></script>
-  <script src="js/AllInOne.js"></script>
+  
   <link href="css/style.css" rel="stylesheet" media="screen">
-  <script>
-var testing = document.createElement("h1");
-var text = document.createTextNode("I doing it");
+	<script>
 
-testing.appendChild(text);
+	window.onload = function(){
+         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
+         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
+       
+	
+	for (var i = 0; i < window.geemails.length; i++)
+  {
+    console.log(window.geemails[i].sender);
+    document.getElementById("sender").innerHTML = geemails[i].sender;
+    
+    console.log(window.geemails[i].subject);
+    document.getElementById("subject").innerHTML = geemails[i].subject;
+    
+    console.log(window.geemails[i].date);
+    document.getElementById("date").innerHTML = geemails[i].date;
+    
+  }
 
-var mainDiv = document.getElementById('main');
+};
+	  </script>
 
-mainDiv.appendChild(testing);
-  </script>
+	  
+  <title>GeeMail</title>
+  
+  
 </head>
 <body>
 
-  
+
   <div class="container" id="main">
 			<div class="logo_container">
 				<div id="logo" >
@@ -61,6 +76,7 @@ mainDiv.appendChild(testing);
 						<td id="sender"></td>
 						<td id="subject"></td>
 					</tr>
+					
 					
 				</table>
 			</div>
