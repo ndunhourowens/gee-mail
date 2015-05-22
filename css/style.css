@@ -1,6 +1,6 @@
 body{
 	background-color: #0090ff;
-	color: #b1b4b5;
+	color: #ffffff;
 	font-family: Arial;
 	font-size: 12pt;
 }
@@ -116,6 +116,7 @@ li {
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+    color:white;
 }
 th, td {
     padding: 5px;

@@ -14,16 +14,22 @@
 	<!--Print out the array into the table-->
 	for (var i = 0; i < window.geemails.length; i++)
   {
+    // Print the senders of emails
     console.log(window.geemails[i].sender);
     document.getElementById("sender").innerHTML = geemails[i].sender;
-    
+    // Print the subject of emails
     console.log(window.geemails[i].subject);
     document.getElementById("subject").innerHTML = geemails[i].subject;
-    
+    // Print the date of emails
     console.log(window.geemails[i].date);
     document.getElementById("date").innerHTML = geemails[i].date;
     
+    // Print the amount of emails
+    console.log(window.geemails.length);
+    document.getElementById("inbox_counter").innerHTML = geemails.length;
+    
   }
+      
 
 };
 	  </script>
@@ -54,7 +60,7 @@
 
 			<div class="folder_container">
 				<ul >
-					<li><a href="#">INBOX</a></li>
+					<li><a href="#">INBOX<div id="inbox_counter"></div></a></li>
 					<li><a href="#">SENT</a></li>
 					<li><a href="#">DRAFT</a></li>
 					<li><a href="#">TRASH</a></li>
@@ -64,7 +70,7 @@
 			
 
 			<div class="inbox_container">
-				<h2>INBOX <id="inbox_counter"></h2>
+              <h2>INBOX </h2>
 				<table id="inbox_messages">
 					<tr>
 						<th>DATE</th>
