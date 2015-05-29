@@ -11,28 +11,61 @@
          // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
          // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
        
+	
+	//This is the original code, I'm having trouble printing all 10 emails into the table.  I added another 'for loop' thinking it would print the next line.  Unfortunatly it is not working how I think it should.  
+
 	<!--Print out the array into the table-->
+	//Input for the row
 	for (var i = 0; i < window.geemails.length; i++)
-  {
-    // Print the senders of emails
-    console.log(window.geemails[i].sender);
-    document.getElementById("sender").innerHTML = geemails[i].sender;
-    // Print the subject of emails
-    console.log(window.geemails[i].subject);
-    document.getElementById("subject").innerHTML = geemails[i].subject;
-    // Print the date of emails
-    console.log(window.geemails[i].date);
-    document.getElementById("date").innerHTML = geemails[i].date;
-    
-    // Print the amount of emails
-    console.log(window.geemails.length);
-    document.getElementById("inbox_counter").innerHTML = geemails.length;
-    
-  }
+	{
+		//Input for next row
+    	for (var j = 0; j < window.geemails[i].length; j++)
+		{
+	    // Print the senders of emails
+	    console.log(window.geemails.length.sender);
+	    document.getElementById("sender").innerHTML = geemails[i].sender;
+	    // Print the subject of emails
+	    console.log(window.geemails[i].subject);
+	    document.getElementById("subject").innerHTML = geemails[i].subject;
+	    // Print the date of emails
+	    console.log(window.geemails[i].date);
+	    document.getElementById("date").innerHTML = geemails[i].date;
+	    
+	    // Print the amount of emails
+	    console.log(window.geemails.length);
+	    document.getElementById("inbox_counter").innerHTML = geemails.length;
+		}
       
 
-};
+	};
 	  </script>
+
+<script>
+		// Here is secondary code example I found.  I messed around a lot with different version of the code tring to pull the information from the JS file.  I'll comment out some of the examples I was woking tried.  
+
+        function displayEmail(table) {
+			document.write("<TABLE BORDER=ON>");
+			document.write("<TH>Number of Email</TH><TH>DATE</TH><TH>SENDER</TH><TH>SUBJECT</TH>");
+			//for(x=0; x<=email.length; x++)
+			for(x=0; x<=3; x++) {
+			document.write("<TR><TD>",x,"</TD>");
+			for(y=1; y<=3; y++){
+			document.write("<TD>",table[y][x],"</TD>");
+			}
+			document.write("</TR>");
+			}
+			document.write("</TABLE>");
+			}
+			//date = window.geemails.length.date;
+			date = ["12.3.12", "12.4.12", "12.5.12"];
+			sender = ["Naomi", "Nadia", "Nicole"];
+			subject = ["Help", "Dont Understand", "Totally Lost"];
+			email = new Array("",date,sender,subject);
+
+			displayEmail(email);
+
+
+</script>
 
 	  
   <title>GeeMail</title>
