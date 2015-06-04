@@ -14,68 +14,52 @@
 	
 	//This is the original code, I'm having trouble printing all 10 emails into the table.  I added another 'for loop' thinking it would print the next line.  Unfortunatly it is not working how I think it should.  
 
-	<!--Print out the array into the table-->
+	<!--Print out date, sender, and subject into the table-->
 	//Input for the row
-	for (var i = 0; i < window.geemails.length; i++)
+	for (var i = 0; i < geemails.length; i++)
 	{
-		//Input for next row
-    	for (var j = 0; j < window.geemails[i].length; j++)
-		{
-	    // Print the senders of emails
-	    console.log(window.geemails.length.sender);
-	    document.getElementById("sender").innerHTML = geemails[i].sender;
-	    // Print the subject of emails
-	    console.log(window.geemails[i].subject);
-	    document.getElementById("subject").innerHTML = geemails[i].subject;
-	    // Print the date of emails
-	    console.log(window.geemails[i].date);
-	    document.getElementById("date").innerHTML = geemails[i].date;
-	    
-	    // Print the amount of emails
-	    console.log(window.geemails.length);
-	    document.getElementById("inbox_counter").innerHTML = geemails.length;
-		}
-      
+    	 var email = geemails[i]; // print out rows of each email - Date, Sender, Subject
+
+    	 // Build the table
+    	 var tableRow = document.createElement('tr');
+		// Build column for Subject
+		var date = document.createElement('td');
+		var dateText = document.createTextNode(email.date);
+		date.appendChild(dateText);
+
+		// Build column for Sender
+		var sender = document.createElement('td');
+		var senderText = document.createTextNode(email.sender);
+		sender.appendChild(senderText);    	 
+
+		 // Build column for Subject
+    	 var subject = document.createElement('td');
+    	 var subjectText = document.createTextNode(email.subject);
+    	 subject.appendChild(subjectText);
+
+    	 // Append table data to the rows
+    	 tableRow.appendChild(date);
+    	 tableRow.appendChild(sender);
+    	 tableRow.appendChild(subject);
+
+    	 // Append the row into a table
+    	 var table = document.getElementById('inbox_messages');
+    	 table.appendChild(tableRow);
+
+    	 // Inbox counter
+    	 document.getElementById("inbox_counter").innerHTML = geemails.length;
+
+    	 // Testing code to display specific body of email
+    	 document.getElementById("demo").innerHTML = ("<h3>BODY</h3>" + "<br>" +geemails[2].body);
+    	}
 
 	};
-	  </script>
+	</script>
 
-<script>
-		// Here is secondary code example I found.  I messed around a lot with different version of the code tring to pull the information from the JS file.  I'll comment out some of the examples I was woking tried.  
-
-        function displayEmail(table) {
-			document.write("<TABLE BORDER=ON>");
-			document.write("<TH>Number of Email</TH><TH>DATE</TH><TH>SENDER</TH><TH>SUBJECT</TH>");
-			//for(x=0; x<=email.length; x++)
-			for(x=0; x<=3; x++) {
-			document.write("<TR><TD>",x,"</TD>");
-			for(y=1; y<=3; y++){
-			document.write("<TD>",table[y][x],"</TD>");
-			}
-			document.write("</TR>");
-			}
-			document.write("</TABLE>");
-			}
-			//date = window.geemails.length.date;
-			date = ["12.3.12", "12.4.12", "12.5.12"];
-			sender = ["Naomi", "Nadia", "Nicole"];
-			subject = ["Help", "Dont Understand", "Totally Lost"];
-			email = new Array("",date,sender,subject);
-
-			displayEmail(email);
-
-
-</script>
-
-	  
   <title>GeeMail</title>
-  
-  
 </head>
 <body>
-
-
-  <div class="container" id="main">
+	<div class="container" id="main">
 			<div class="logo_container">
 				<div id="logo" >
 					<img src="img/Email_Logo.gif">
@@ -88,20 +72,26 @@
 				</div>
 					<div id="clear"></div>
 			</div>
-				
-			
 
 			<div class="folder_container">
 				<ul >
-					<li><a href="#">INBOX<div id="inbox_counter"></div></a></li>
+					<li><a href="#">INBOX <div id="inbox_counter"></div></a></li>
 					<li><a href="#">SENT</a></li>
 					<li><a href="#">DRAFT</a></li>
 					<li><a href="#">TRASH</a></li>
 				</ul>
 				<div id="clear"></div>
 			</div>
+			<div class="email_functions">
+				<ul >
+					<li><a href="#">REPLY </a></li>
+					<li><a href="#">REPLY ALL </a></li>
+					<li><a href="#">FORWARD </a></li>
+					<li><a href="#">TRASH </a></li>
+				</ul>
+				<div id="clear"></div>
+			</div>
 			
-
 			<div class="inbox_container">
               <h2>INBOX </h2>
 				<table id="inbox_messages">
@@ -110,18 +100,19 @@
 						<th>SENDER</th>
 						<th>SUBJECT</th>
 					</tr>
-					<tr>
-						<td id="date"></td>
-						<td id="sender"></td>
-						<td id="subject"></td>
-					</tr>
-
 					
 				</table>
 			</div>
 
-		
-		</div>
+		  
+			<div class="email_message">
+              <h2>INBOX </h2>
+              <h3>DATE <div id="emailDate"></div></h3>
+              <h3>SENDER <div id="sender"></div></h3>
+              <h3>SUBJECT <div id="subject"></div></h3>
 
+				<p id="demo"></p>
+			</div>
+	</div>
 </body>
 </html>
