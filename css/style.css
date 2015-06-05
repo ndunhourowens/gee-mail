@@ -6,7 +6,6 @@ body{
 }
 .container {
 	background-color: white;
-	width: 700px;
 	border: thin solid black;
 	margin:10px auto;
 }
@@ -86,37 +85,33 @@ li {
 	border: thin solid black;
 	margin: 10px;
 }
-/*-----Email function-----*/
-.email_functions{
+/*-----Email Container-----*/
+.email{
 	background-color: #81BEF7;
-	font-size: .80 em;
 	color: #2E2E2E;
 	border: thin solid black;
 	margin: 10px;
 }
-/*-----Email function-----*/
-.email_message{
-	background-color: #81BEF7;
-	font-size: .80 em;
-	color: #2E2E2E;
-	border: thin solid black;
-	margin: 10px;
-	padding-left: 10px;
-}
-
-
-/*-----Inbox Container-----*/
-.inbox_container{
+/*-----Inbox Info-----*/
+.inbox_info{
 	background-color: #81BEF7;
 	padding: 10px;
 	border: thin solid black;
 	margin: 10px;
+	width: 35%;
+	float:left;
+	position: relative;
 }
-.inbox_container img{
-	height: 100px;
-	width: 100px;
+/*-----Email messages-----*/
+.email_message{
+	background-color: #81BEF7;
+	padding: 10px;
+	border: thin solid black;
+	margin: 10px;
+	width: 58%;
+	float:right;
+	position: relative;
 }
-
 /*-----Floating Container-----*/
 #float_left{
 	float: left;
@@ -134,6 +129,7 @@ table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
     color: #2E2E2E;
+    position: relative;
 }
 th, td {
     padding: 5px;
