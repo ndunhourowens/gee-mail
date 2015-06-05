@@ -20,7 +20,7 @@
 	{
     	 var email = geemails[i]; // print out rows of each email - Date, Sender, Subject
 
-    	 // Build the table
+    	// Build the table
     	 var tableRow = document.createElement('tr');
 		// Build column for Subject
 		var date = document.createElement('td');
@@ -49,8 +49,12 @@
     	 // Inbox counter
     	 document.getElementById("inbox_counter").innerHTML = geemails.length;
 
-    	 // Testing code to display specific body of email
-    	 document.getElementById("demo").innerHTML = ("<h3>BODY</h3>" + "<br>" +geemails[2].body);
+    	 // Display specific body of email using onclick
+    	 // I would like to create a onclick function to where user clicks on a certian email and the information will fill into the Email Message box.
+    	 // I believe I can do this by the clicking function reconizing the array number and diplaying information into the email message box.  Thing is I not sure the correct coding for it.  this is where I need help.  
+
+    	 	document.getElementById("email").innerHTML = ("<h3>BODY</h3>" + "<br>" +geemails[2].body); // this is where I think code should go for the onclick );
+    	 
     	}
 
 	};
@@ -79,39 +83,34 @@
 					<li><a href="#">SENT</a></li>
 					<li><a href="#">DRAFT</a></li>
 					<li><a href="#">TRASH</a></li>
-				</ul>
-				<div id="clear"></div>
-			</div>
-			<div class="email_functions">
-				<ul >
 					<li><a href="#">REPLY </a></li>
 					<li><a href="#">REPLY ALL </a></li>
 					<li><a href="#">FORWARD </a></li>
-					<li><a href="#">TRASH </a></li>
 				</ul>
 				<div id="clear"></div>
 			</div>
 			
-			<div class="inbox_container">
-              <h2>INBOX </h2>
-				<table id="inbox_messages">
-					<tr>
-						<th>DATE</th>
-						<th>SENDER</th>
-						<th>SUBJECT</th>
-					</tr>
+			<div class="email">
+				<div class="inbox_info">
+	              <h2>INBOX </h2>
+					<table id="inbox_messages" onclick="showEmail()">
+						<tr>
+							<th>DATE</th>
+							<th>SENDER</th>
+							<th>SUBJECT</th>
+						</tr>	
+					</table>
 					
-				</table>
-			</div>
-
-		  
-			<div class="email_message">
-              <h2>INBOX </h2>
-              <h3>DATE <div id="emailDate"></div></h3>
-              <h3>SENDER <div id="sender"></div></h3>
-              <h3>SUBJECT <div id="subject"></div></h3>
-
-				<p id="demo"></p>
+				</div>
+			
+				<div class="email_message">
+	              <h2>EMAIL MESSAGE</h2>
+	              <h3>DATE <div id="emailDate"></div></h3>
+	              <h3>SENDER <div id="sender"></div></h3>
+	              <h3>SUBJECT <div id="subject"></div></h3>
+				  <p id="email"></p>
+				</div>
+				<div id="clear"></div>
 			</div>
 	</div>
 </body>
