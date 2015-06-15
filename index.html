@@ -11,7 +11,6 @@
          // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
          // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
        
-	
 	//This is the original code, I'm having trouble printing all 10 emails into the table.  I added another 'for loop' thinking it would print the next line.  Unfortunatly it is not working how I think it should.  
 
 	<!--Print out date, sender, and subject into the table-->
@@ -21,7 +20,7 @@
     	 var email = geemails[i]; // print out rows of each email - Date, Sender, Subject
 
     	// Build the table
-    	 var tableRow = document.createElement('tr');
+    	var tableRow = document.createElement('tr');
 		// Build column for Subject
 		var date = document.createElement('td');
 		var dateText = document.createTextNode(email.date);
@@ -54,9 +53,20 @@
     	 // I would like to create a onclick function to where user clicks on a certian email and the information will fill into the Email Message box.
     	 // I believe I can do this by the clicking function reconizing the array number and diplaying information into the email message box.  Thing is I not sure the correct coding for it.  this is where I need help.  
 
-    	 	document.getElementById("email").innerHTML = ("<h3>BODY</h3>" + "<br>" +geemails[2].body); // this is where I think code should go for the onclick );
-    	 
-    	}
+    	 document.getElementById("showEmail").innerHTML = ("<h3>BODY</h3>" + "<br>" +geemails[2].body); // this is where I think code should go for the onclick );
+
+		
+
+		// Setting Interval to retrive new message
+		var myVar;
+		function myFunction() {
+			myVar = setInterval(alertFunc, 3000);
+			// Display new email every 10 seconds
+			var newEmail =
+		}
+
+		}	
+		}
 
 	};
 	</script>
@@ -110,6 +120,7 @@
 	              <h3>SENDER <div id="sender"></div></h3>
 	              <h3>SUBJECT <div id="subject"></div></h3>
 				  <p id="email"></p>
+				  
 				</div>
 				<div id="clear"></div>
 			</div>
