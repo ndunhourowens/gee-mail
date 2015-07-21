@@ -32,14 +32,21 @@
 		sender.appendChild(senderText);    	 
 
 		 // Build column for Subject
-    	 var subject = document.createElement('td');
-    	 var subjectText = document.createTextNode(email.subject);
-    	 subject.appendChild(subjectText);
+    	 	var subject = document.createElement('td');
+    	 	var subjectText = document.createTextNode(email.subject);
+    	 	subject.appendChild(subjectText);
+
+		// Build column for body
+    	 	var body = document.createElement('td');
+    	 	var bodyText = document.createTextNode(email.subject);
+    	 	body.appendChild(bodyText);
+
 
     	 // Append table data to the rows
     	 tableRow.appendChild(date);
     	 tableRow.appendChild(sender);
     	 tableRow.appendChild(subject);
+	 	 tableRow.appendChild(body);
 
     	 // Append the row into a table
     	 var table = document.getElementById('inbox_messages');
@@ -52,20 +59,26 @@
     	 
     	 // I would like to create a onclick function to where user clicks on a certian email and the information will fill into the Email Message box.
     	 // I believe I can do this by the clicking function reconizing the array number and diplaying information into the email message box.  Thing is I not sure the correct coding for it.  this is where I need help.  
-
-    	 document.getElementById("showEmail").innerHTML = ("<h3>BODY</h3>" + "<br>" +geemails[2].body); // this is where I think code should go for the onclick );
-
-		
+    	 
+	geemails[i].addEventListener('click',showEmail);
+	
+		//show the body of the email when user clicks the particular subject line
+		function showEmail(event){
+			console.log(event);
+			console.log(this);
+			var emailBody = this.querySelectorAll('.body')[0];
+			// check if the emailBody has a class 'show'
+			if(emailBody.classList.contains('show')===false){
+				//doesn't exist,add the class 'show'
+				emailBody.classList.add('show');}
+			else{
+				//if it has it, remove it
+				emailBody.classList.remove('show');
+			} 
+    	
 
 		// Setting Interval to retrive new message
-		var myVar;
-		function myFunction() {
-			myVar = setInterval(alertFunc, 3000);
-			// Display new email every 10 seconds
-			var newEmail =
-		}
-
-		}	
+		
 		}
 
 	};
@@ -104,11 +117,12 @@
 			<div class="email">
 				<div class="inbox_info">
 	              <h2>INBOX </h2>
-					<table id="inbox_messages" onclick="showEmail">
+					<table id="inbox_messages">
 						<tr>
 							<th>DATE</th>
 							<th>SENDER</th>
 							<th>SUBJECT</th>
+							<th>BODY</th>
 						</tr>	
 					</table>
 					
@@ -119,7 +133,8 @@
 	              <h3>DATE <div id="emailDate"></div></h3>
 	              <h3>SENDER <div id="sender"></div></h3>
 	              <h3>SUBJECT <div id="subject"></div></h3>
-				  <p id="email"></p>
+		      <h3>BODY <div id="body"></div></h3>
+				<p id="email"></p>
 				  
 				</div>
 				<div id="clear"></div>
