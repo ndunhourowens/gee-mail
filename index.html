@@ -15,8 +15,7 @@
 
 	<!--Print out date, sender, and subject into the table-->
 	//Input for the row
-	for (var i = 0; i < geemails.length; i++)
-	{
+	for (var i = 0; i < geemails.length; i++){
     	 var email = geemails[i]; // print out rows of each email - Date, Sender, Subject
 
     	// Build the table
@@ -32,21 +31,20 @@
 		sender.appendChild(senderText);    	 
 
 		 // Build column for Subject
-    	 	var subject = document.createElement('td');
-    	 	var subjectText = document.createTextNode(email.subject);
-    	 	subject.appendChild(subjectText);
+    	 var subject = document.createElement('td');
+    	 var subjectText = document.createTextNode(email.subject);
+    	 subject.appendChild(subjectText);
 
-		// Build column for body
-    	 	var body = document.createElement('td');
-    	 	var bodyText = document.createTextNode(email.subject);
-    	 	body.appendChild(bodyText);
-
+    	 // Build column for Sender
+		var body = document.createElement('td');
+		var bodyText = document.createTextNode(email.body);
+		body.appendChild(bodyText);
 
     	 // Append table data to the rows
     	 tableRow.appendChild(date);
     	 tableRow.appendChild(sender);
     	 tableRow.appendChild(subject);
-	 	 tableRow.appendChild(body);
+    	 tableRow.appendChild(body);
 
     	 // Append the row into a table
     	 var table = document.getElementById('inbox_messages');
@@ -57,30 +55,17 @@
 
     	 // Display specific body of email using onclick
     	 
+    	 
     	 // I would like to create a onclick function to where user clicks on a certian email and the information will fill into the Email Message box.
     	 // I believe I can do this by the clicking function reconizing the array number and diplaying information into the email message box.  Thing is I not sure the correct coding for it.  this is where I need help.  
-    	 
-	geemails[i].addEventListener('click',showEmail);
-	
-		//show the body of the email when user clicks the particular subject line
-		function showEmail(event){
-			console.log(event);
-			console.log(this);
-			var emailBody = this.querySelectorAll('.body')[0];
-			// check if the emailBody has a class 'show'
-			if(emailBody.classList.contains('show')===false){
-				//doesn't exist,add the class 'show'
-				emailBody.classList.add('show');}
-			else{
-				//if it has it, remove it
-				emailBody.classList.remove('show');
-			} 
     	
 
 		// Setting Interval to retrive new message
+		// Testing code to get the basic.  Plan is to try and build off of that
+		setInterval(function() {alert("hello")}, 2000);
 		
-		}
 
+		}
 	};
 	</script>
 
@@ -125,19 +110,7 @@
 							<th>BODY</th>
 						</tr>	
 					</table>
-					
 				</div>
-			
-				<div class="email_message">
-	              <h2>EMAIL MESSAGE</h2>
-	              <h3>DATE <div id="emailDate"></div></h3>
-	              <h3>SENDER <div id="sender"></div></h3>
-	              <h3>SUBJECT <div id="subject"></div></h3>
-		      <h3>BODY <div id="body"></div></h3>
-				<p id="email"></p>
-				  
-				</div>
-				<div id="clear"></div>
 			</div>
 	</div>
 </body>
