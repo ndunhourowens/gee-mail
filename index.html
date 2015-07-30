@@ -61,11 +61,18 @@
     	
 
 		// Setting Interval to retrive new message
-		// Testing code to get the basic.  Plan is to try and build off of that
-		setInterval(function() {alert("hello")}, 2000);
-		
+		// Testing code to get the basic.  Plan is to try and build off that
+		var myVar = setInterval(function(){ myTimer() }, 3000);
 
+		function myTimer() {
+    		document.getElementById("testing").innerHTML += "Naomi ";
 		}
+
+		function myStopFunction() {
+    		clearInterval(myVar);
+		}
+
+		} // ends for loop
 	};
 	</script>
 
@@ -111,6 +118,11 @@
 						</tr>	
 					</table>
 				</div>
+			</div>
+
+			<div>
+				<p id="testing"></p>
+				<p id="testing2>"></p>
 			</div>
 	</div>
 </body>
