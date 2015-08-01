@@ -8,13 +8,20 @@
 	<script>
 
 	window.onload = function(){
-         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
-         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-       
-	//This is the original code, I'm having trouble printing all 10 emails into the table.  I added another 'for loop' thinking it would print the next line.  Unfortunatly it is not working how I think it should.  
-
-	<!--Print out date, sender, and subject into the table-->
+	//Print out date, sender, and subject into the table
 	//Input for the row
+	var getMoreEmail = setInterval(function() {
+		//get new message
+		generateTableRow();
+	}, 3000);
+	
+
+	function generateTableRow() {
+		console.log(tableRow);
+	}	
+
+	generateTableRow(tableRow);
+
 	for (var i = 0; i < geemails.length; i++){
     	 var email = geemails[i]; // print out rows of each email - Date, Sender, Subject
 
@@ -50,29 +57,12 @@
     	 var table = document.getElementById('inbox_messages');
     	 table.appendChild(tableRow);
 
-    	 // Inbox counter
-    	 document.getElementById("inbox_counter").innerHTML = geemails.length;
-
-    	 // Display specific body of email using onclick
-    	 
-    	 
-    	 // I would like to create a onclick function to where user clicks on a certian email and the information will fill into the Email Message box.
-    	 // I believe I can do this by the clicking function reconizing the array number and diplaying information into the email message box.  Thing is I not sure the correct coding for it.  this is where I need help.  
-    	
-
-		// Setting Interval to retrive new message
-		// Testing code to get the basic.  Plan is to try and build off that
-		var myVar = setInterval(function(){ myTimer() }, 3000);
-
-		function myTimer() {
-    		document.getElementById("testing").innerHTML += "Naomi ";
-		}
-
-		function myStopFunction() {
-    		clearInterval(myVar);
-		}
-
 		} // ends for loop
+
+	
+		// Inbox counter
+    	document.getElementById("inbox_counter").innerHTML = geemails.length;
+
 	};
 	</script>
 
@@ -80,50 +70,50 @@
 </head>
 <body>
 	<div class="container" id="main">
-			<div class="logo_container">
-				<div id="logo" >
-					<img src="img/Email_Logo.gif">
-				</div>
-				<div id="user_pic">
-					<img src="img/userimg.png" >
-				</div>	
-				<div id="user_name">
-					<h2>USERNAME</h2>
-				</div>
-					<div id="clear"></div>
+		<div class="logo_container">
+			<div id="logo" >
+				<img src="img/Email_Logo.gif">
 			</div>
-
-			<div class="folder_container">
-				<ul >
-					<li><a href="#">INBOX <div id="inbox_counter"></div></a></li>
-					<li><a href="#">SENT</a></li>
-					<li><a href="#">DRAFT</a></li>
-					<li><a href="#">TRASH</a></li>
-					<li><a href="#">REPLY </a></li>
-					<li><a href="#">REPLY ALL </a></li>
-					<li><a href="#">FORWARD </a></li>
-				</ul>
+			<div id="user_pic">
+				<img src="img/userimg.png" >
+			</div>	
+			<div id="user_name">
+				<h2>USERNAME</h2>
+			</div>
 				<div id="clear"></div>
-			</div>
-			
-			<div class="email">
-				<div class="inbox_info">
-	              <h2>INBOX </h2>
-					<table id="inbox_messages">
-						<tr>
-							<th>DATE</th>
-							<th>SENDER</th>
-							<th>SUBJECT</th>
-							<th>BODY</th>
-						</tr>	
-					</table>
-				</div>
-			</div>
+		</div>
 
-			<div>
-				<p id="testing"></p>
-				<p id="testing2>"></p>
+		<div class="folder_container">
+			<ul >
+				<li><a href="#">INBOX <div id="inbox_counter"></div></a></li>
+				<li><a href="#">SENT</a></li>
+				<li><a href="#">DRAFT</a></li>
+				<li><a href="#">TRASH</a></li>
+				<li><a href="#">REPLY </a></li>
+				<li><a href="#">REPLY ALL </a></li>
+				<li><a href="#">FORWARD </a></li>
+			</ul>
+			<div id="clear"></div>
+		</div>
+			
+		<div class="email">
+			<div class="inbox_info">
+	            <h2>INBOX </h2>
+				<table id="inbox_messages">
+					<tr>
+						<th>DATE</th>
+						<th>SENDER</th>
+						<th>SUBJECT</th>
+						<th>BODY</th>
+					</tr>	
+				</table>
 			</div>
+		</div>
+
+		<div>
+			<p id="testing"></p>
+			<p id="testing2>"></p>
+		</div>
 	</div>
 </body>
 </html>
