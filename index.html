@@ -12,15 +12,14 @@
 	//Input for the row
 	var getMoreEmail = setInterval(function() {
 		//get new message
-		generateTableRow();
-	}, 3000);
+		generateTableRow();}, 3000);
 	
-
 	function generateTableRow() {
 		console.log(tableRow);
-	}	
+		document.getElementById('inbox_messages').innerHtml = tableRow;
+	}
 
-	generateTableRow(tableRow);
+	generateTableRow(getMoreEmail);
 
 	for (var i = 0; i < geemails.length; i++){
     	 var email = geemails[i]; // print out rows of each email - Date, Sender, Subject
@@ -57,15 +56,15 @@
     	 var table = document.getElementById('inbox_messages');
     	 table.appendChild(tableRow);
 
-		} // ends for loop
+	} // ends for loop
 
 	
-		// Inbox counter
-    	document.getElementById("inbox_counter").innerHTML = geemails.length;
+	// Inbox counter
+    document.getElementById("inbox_counter").innerHTML = geemails.length;
 
 	};
-	</script>
 
+	</script>
   <title>GeeMail</title>
 </head>
 <body>

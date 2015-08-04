@@ -1,18 +1,19 @@
 body{
-	background-color: #81BEF7;
+	background-color: #CEE3F6;
 	color: #2E2E2E;
 	font-family: Arial;
 	font-size: 12pt;
 }
 .container {
-	background-color: white;
+	background-color: #81BEF7;
 	border: thin solid black;
 	margin:10px auto;
+	width: 80%;
 }
 
 /*-----Logo Container-----*/
 .logo_container{
-	background-color: #81BEF7;
+	background-color: #ffffff;
 	border: thin solid black;
 	margin: 10px;
 	
@@ -74,12 +75,11 @@ li {
 	background-color: #ffffff;
 	padding: 2px;
 	margin: 10px;
-	
 }
 
 /*-----Folder Container-----*/
 .folder_container{
-	background-color: #81BEF7;
+	background-color: #ffffff;
 	font-size: .80 em;
 	color: #2E2E2E;
 	border: thin solid black;
@@ -87,29 +87,25 @@ li {
 }
 /*-----Email Container-----*/
 .email{
-	background-color: #81BEF7;
+	background-color: #ffffff;
 	color: #2E2E2E;
 	border: thin solid black;
 	margin: 10px;
 }
 /*-----Inbox Info-----*/
 .inbox_info{
-	background-color: #81BEF7;
+	background-color: #ffffff;
 	padding: 10px;
-	border: thin solid black;
 	margin: 10px;
-	width: 35%;
-	float:left;
 	position: relative;
 }
 /*-----Email messages-----*/
 .email_message{
-	background-color: #81BEF7;
+	background-color: #ffffff;
 	padding: 10px;
 	border: thin solid black;
 	margin: 10px;
 	width: 58%;
-	float:right;
 	position: relative;
 }
 /*-----Floating Container-----*/
